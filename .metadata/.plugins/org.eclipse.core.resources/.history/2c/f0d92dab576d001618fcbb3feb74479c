@@ -1,0 +1,51 @@
+package com.stevenkuranga.code2040;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.json.simple.JSONObject;
+
+public class Registration {
+	public static void main(String[] args) {
+		HttpURLConnection connection = null;
+		JSONObject json = new JSONObject();
+		
+		//Creates the JSON file
+		json.put("token", "d89cb10811572aec44090ccb2805de48");
+		json.put("github", "https://github.com/NkStevo/Code2040");
+		
+		try {
+			//Opens connection to registration endpoint
+			URL url = new URL("http://challenge.code2040.org/api/register");
+			connection = (HttpURLConnection) url.openConnection();
+			
+			//Formats connection properties
+			connection.setRequestMethod("POST");
+			connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			connection.setRequestProperty("Content-Language", "en-US");
+			
+			connection.setUseCaches(false);
+			connection.setDoOutput(true);
+			
+			//Sends request to endpoint
+			DataOutputStream dos = new DataOutputStream(connection.getOutputStream());
+			dos.writeBytes(json.toJSONString());
+			dos.close();
+			
+			InputStream is = connection.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			//Closes connection after work has been completed
+			if (connection != null) {
+				connection.disconnect();
+			}
+		}
+	}
+}
