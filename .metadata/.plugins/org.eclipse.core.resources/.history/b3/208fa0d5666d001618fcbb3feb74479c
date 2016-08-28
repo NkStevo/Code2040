@@ -1,0 +1,9 @@
+package com.stevenkuranga.code2040;
+
+import org.json.simple.JSONObject;
+
+public class PostRequest {
+	public static String post(String url, JSONObject json) {
+		
+	}
+}
