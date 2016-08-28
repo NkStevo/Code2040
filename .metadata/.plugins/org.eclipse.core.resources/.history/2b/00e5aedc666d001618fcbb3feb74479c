@@ -1,0 +1,18 @@
+package com.stevenkuranga.code2040;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.json.simple.JSONObject;
+
+public class PostRequest {
+	public static String post(String url, JSONObject json) {
+		HttpURLConnection connection;
+		
+		try {
+			//Opens connection to registration endpoint
+			URL url = new URL("http://challenge.code2040.org/api/register");
+			connection = (HttpURLConnection) url.openConnection();
+		}
+	}
+}
