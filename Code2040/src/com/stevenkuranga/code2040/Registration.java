@@ -1,18 +1,11 @@
 package com.stevenkuranga.code2040;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-
 import org.json.simple.JSONObject;
 
 public class Registration {
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-		//Creates the JSON file
+		//Creates the JSON object
 		JSONObject json = new JSONObject();
 		
 		json.put("token", "d89cb10811572aec44090ccb2805de48");
