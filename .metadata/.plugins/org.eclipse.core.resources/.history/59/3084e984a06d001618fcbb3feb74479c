@@ -1,0 +1,42 @@
+package com.stevenkuranga.code2040;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class PrefixPrejudice {
+
+	public static void main(String[] args) throws ParseException {
+		//Creates the token JSON object
+		JSONObject json = new JSONObject();
+				
+		//Creates the given JSON object and accompanying parser
+		JSONParser parser = new JSONParser();
+		JSONObject jsonGet;
+				
+		//Creates string to hold the prefix
+		String target;
+
+		json.put("token", "d89cb10811572aec44090ccb2805de48");
+
+		//Parses the string given into a JSON object
+		jsonGet = (JSONObject) parser.parse(PostRequest.post(
+				"http://challenge.code2040.org/api/haystack", json));
+
+		target = (String) jsonGet.get("needle");
+
+		//Converts string array into ArrayList
+		ArrayList<Object> strArray = new ArrayList<Object>(
+				Arrays.asList((Object[]) ((JSONArray) jsonGet.get("haystack")).toArray()));
+
+		Iterator = strArray.iterator();
+		for(Object o : strArray) {
+			if (o)
+		}
+	}
+
+}
