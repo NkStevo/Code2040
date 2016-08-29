@@ -1,0 +1,12 @@
+package com.stevenkuranga.code2040;
+
+import org.json.simple.JSONObject;
+
+public class NeedleSearch {
+	public static void main(String[] args) {
+		//Creates the JSON object
+		JSONObject json = new JSONObject();
+				
+		json.put("token", "d89cb10811572aec44090ccb2805de48");
+	}
+}

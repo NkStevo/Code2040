@@ -1,0 +1,18 @@
+package com.stevenkuranga.code2040;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+public class NeedleSearch {
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		//Creates the JSON object
+		JSONObject json = new JSONObject();
+		JSONObject jsonGet;
+				
+		json.put("token", "d89cb10811572aec44090ccb2805de48");
+		
+		jsonGet = (JSONObject) new JSONParser.parse(PostRequest.post(
+				"http://challenge.code2040.org/api/haystack", json));
+	}
+}
