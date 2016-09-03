@@ -11,10 +11,10 @@ import org.json.simple.parser.ParseException;
 public class NeedleSearch {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws ParseException {
-		//Creates the token JSON object
+		//Creates the token JSONObject
 		JSONObject json = new JSONObject();
 		
-		//Creates the given JSON object and accompanying parser
+		//Creates the given JSONObject and accompanying parser
 		JSONParser parser = new JSONParser();
 		JSONObject jsonGet;
 		
@@ -23,7 +23,7 @@ public class NeedleSearch {
 				
 		json.put("token", "d89cb10811572aec44090ccb2805de48");
 		
-		//Parses the string given into a JSON object
+		//Parses the string given into a JSONObject
 		jsonGet = (JSONObject) parser.parse(PostRequest.post(
 				"http://challenge.code2040.org/api/haystack", json));
 		
