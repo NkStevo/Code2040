@@ -1,0 +1,29 @@
+package com.stevenkuranga.code2040;
+
+import org.json.simple.JSONObject;
+
+public class Reversal {
+
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		//Creates the JSON object
+		JSONObject json = new JSONObject();
+		
+		json.put("token", "d89cb10811572aec44090ccb2805de48");
+		
+		//Creates the reversed string
+		StringBuffer strBuff = new StringBuffer(PostRequest.post(
+				"http://challenge.code2040.org/api/reverse", json)).reverse();
+		
+		//Deletes the \n at the beginning of every string created from PostRequest.post()
+		strBuff.delete(0, 1);
+		
+		//Inserts string into the JSON
+		json.put("string", strBuff.toString());
+		
+		//Prints the response
+		System.out.println(PostRequest.post(
+				"http://challenge.code2040.org/api/reverse/validate", json));
+	}
+
+}

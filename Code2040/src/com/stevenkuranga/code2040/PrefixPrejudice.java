@@ -24,7 +24,7 @@ public class PrefixPrejudice {
 
 		json.put("token", "d89cb10811572aec44090ccb2805de48");
 
-		//Parses the string given into a JSON object
+		//Parses the string given into a JSONObject
 		jsonGet = (JSONObject) parser.parse(PostRequest.post(
 				"http://challenge.code2040.org/api/prefix", json));
 

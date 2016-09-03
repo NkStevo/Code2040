@@ -5,7 +5,7 @@ import org.json.simple.JSONObject;
 public class Registration {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-		//Creates the JSON object
+		//Creates the JSONObject
 		JSONObject json = new JSONObject();
 		
 		json.put("token", "d89cb10811572aec44090ccb2805de48");

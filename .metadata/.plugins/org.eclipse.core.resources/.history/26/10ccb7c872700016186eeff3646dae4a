@@ -1,0 +1,25 @@
+package com.stevenkuranga.code2040;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import org.json.simple.JSONObject;
+
+public class DatingGame {
+
+	public static void main(String[] args) {
+		//Creates the JSON object
+		JSONObject json = new JSONObject();
+		JSONObject jsonGet = new JSONObject();
+		
+		json.put("token", "d89cb10811572aec44090ccb2805de48");
+
+		String timeGet = PostRequest.post("http://challenge.code2040.org/api/dating", json);
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm:ssZ");
+		LocalDateTime dateTime = LocalDateTime.parse(timeGet, formatter);
+		
+		dateTime.plusSeconds(seconds)
+	}
+
+}
